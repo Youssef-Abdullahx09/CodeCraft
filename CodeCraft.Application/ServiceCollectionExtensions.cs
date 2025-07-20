@@ -1,3 +1,4 @@
+using System.Reflection;
 using CodeCraft.Infrastructure;
 using CodeCraft.Persistence;
 using CodeCraft.Query;
@@ -14,6 +15,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddCodeCraftInfrastructure(configuration);
         services.AddCodeCraftPersistence();
-        services.AddCodeCraftQuery();
+        services.AddCodeCraftQuery(configuration);
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
     }
 }

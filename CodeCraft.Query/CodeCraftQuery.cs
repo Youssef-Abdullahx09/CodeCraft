@@ -33,7 +33,7 @@ public sealed class CodeCraftQuery(
             var queryParameters = new DynamicParameters();
             queryParameters.Add(nameof(query.Name), query.Name?.Trim());
             
-            // queryParameters.Add(nameof(query.OrderBy), query.OrderBy);
+            queryParameters.Add(nameof(query.OrderBy), query.OrderBy);
             queryParameters.Add(nameof(query.SortDirection), query.SortDirection.GetValue());
             queryParameters.Add(nameof(query.PageNumber), query.PageNumber);
             queryParameters.Add(nameof(query.PageSize), query.PageSize);

@@ -19,7 +19,8 @@ public sealed class Handler(
                 Name = request.Name,
                 PageNumber = request.PageNumber,
                 PageSize = request.PageSize,
-                SortDirection = request.SortDirection
+                SortDirection = request.SortDirection,
+                OrderBy = request.SortOptions.ToString() ?? nameof(SortOptions.Name)
             },
             cancellationToken);
     }
