@@ -7,18 +7,18 @@ namespace CodeCraft.Infrastructure;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddCodeCraftInfrastructure(
-        this IServiceCollection services
-        , IConfiguration configuration)
+    public static void AddCodeCraftInfrastructure(
+        this IServiceCollection services,
+        IConfiguration configuration)
     {
         services.AddCodeCraftDbContext(configuration);
-        return services;
     }
 
-    private static void AddCodeCraftDbContext(this IServiceCollection services
-        , IConfiguration configuration)
+    private static void AddCodeCraftDbContext(
+        this IServiceCollection services,
+        IConfiguration configuration)
     {
-        services.AddDbContext<ICodeCraftDbContext, CodeCraftDbContext>((sp, options) =>
+        services.AddDbContext<ICodeCraftDbContext, CodeCraftDbContext>(options=>
             options.UseNpgsql(configuration.GetConnectionString(DbContextConfiguration.CodeCraftConnectionString)));
 
         var context = services.BuildServiceProvider().GetRequiredService<CodeCraftDbContext>();
