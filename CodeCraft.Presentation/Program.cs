@@ -4,8 +4,11 @@ using CodeCraft.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSwaggerGen();
 builder.Services.AddCodeCraftApplication(builder.Configuration);
+builder.Services.AddSwaggerGen(options =>
+{
+    options.CustomSchemaIds(type => type?.FullName?.Replace(".", "_"));
+});
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

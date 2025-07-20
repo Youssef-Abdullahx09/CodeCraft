@@ -1,4 +1,5 @@
 select
+    "Id",
     "Name",
     "Description",
     COUNT(*) OVER () AS Total

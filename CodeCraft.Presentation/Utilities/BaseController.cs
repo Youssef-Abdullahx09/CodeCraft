@@ -15,4 +15,5 @@ public abstract class BaseController : ControllerBase
 
     protected CancellationToken PipelineCancellationToken => Accessor?.HttpContext?.RequestAborted ?? default;
 
+    protected Guid CurrentUserId => Guid.NewGuid();
 }
