@@ -11,5 +11,6 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ICodeCraftQuery, CodeCraftQuery>();
         
         services.AddScoped<IConnectionWrapper, ConnectionWrapper>();
+        services.AddScoped<IQueryFileService, QueryFileService>();
     }
 }
