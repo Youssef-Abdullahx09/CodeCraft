@@ -11,7 +11,6 @@ public sealed class Endpoint : BaseController
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Product))]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<IActionResult> Details(
         [FromRoute] Guid id)
     {
