@@ -6,7 +6,7 @@ namespace CodeCraft.Presentation.Features.Products.Details;
 
 [Tags("Products")]
 [Route("products/{id:guid}")]
-public sealed class ProductsController : BaseController
+public sealed class Endpoint : BaseController
 {
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Product))]

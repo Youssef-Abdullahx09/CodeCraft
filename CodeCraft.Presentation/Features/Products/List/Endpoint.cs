@@ -7,7 +7,7 @@ namespace CodeCraft.Presentation.Features.Products.List;
 
 [Tags("Products")]
 [Route("products")]
-public sealed class ProductsController : BaseController
+public sealed class Endpoint : BaseController
 {
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaginationList<Product>))]
