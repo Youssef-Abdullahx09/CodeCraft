@@ -7,7 +7,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Utilities\" />
+      <PackageReference Include="Dapper" Version="2.1.66" />
+      <PackageReference Include="Npgsql" Version="8.0.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+        <HintPath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.14\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Products\Details\" />
+      <Folder Include="Products\List\" />
     </ItemGroup>
 
 </Project>

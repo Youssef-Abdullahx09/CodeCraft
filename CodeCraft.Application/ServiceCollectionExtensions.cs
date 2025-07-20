@@ -1,5 +1,6 @@
 using CodeCraft.Infrastructure;
 using CodeCraft.Persistence;
+using CodeCraft.Query;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,5 +14,6 @@ public static class ServiceCollectionExtensions
     {
         services.AddCodeCraftInfrastructure(configuration);
         services.AddCodeCraftPersistence();
+        services.AddCodeCraftQuery();
     }
 }
